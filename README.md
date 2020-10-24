@@ -194,13 +194,3 @@ Use case diagrams
 Activity sequence diagrams
 Sequence diagram for every use case
 Mockups
-
-MVP(Minimal Viable Product) Features
-
-Action:
-
-1. Inventory view for all users : one API for CRUD operation on inventory (IAM).
-2. To manage the role API(IAM) : role management (authenticate (username and password(hash value check)) + claims)
-
-Microservices does not have centralised database.
-
