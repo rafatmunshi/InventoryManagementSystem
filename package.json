@@ -1,0 +1,37 @@
+{
+  "name": "inventorymanagementsystem",
+  "version": "1.0.0",
+  "description": "***** Development******",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafatmunshi/InventoryManagementSystem.git"
+  },
+  "author": "aditya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafatmunshi/InventoryManagementSystem/issues"
+  },
+  "homepage": "https://github.com/rafatmunshi/InventoryManagementSystem#readme",
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mysql",
+    "api",
+    "restfulapi",
+    "javascript",
+    "es6"
+  ],
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
