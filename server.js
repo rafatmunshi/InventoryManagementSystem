@@ -1,24 +1,44 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const log= require('morgan')('dev');
+var properties = require('./config/db.properties');
+var db = require('./config/db.config');
 
-// create express app
-const app = express();
 
-// Setup server port
-const port = process.env.PORT || 5000;
+//Item Routes
+var itemRoutes = require('./src/routes/items.routes');
+const app = express(); // create express app
 
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
+//configure bodyparser
+var bodyParserJSON = bodyParser.json();
+var bodyParserURLEncoded = bodyParser.urlencoded({extended:true});
 
-// parse requests of content-type - application/json
-app.use(bodyParser.json())
+//initialise express router
+var router = express.Router();
 
-// define a root route
-app.get('/', (req, res) => {
-    res.send("Hello World");
-  });
+// call the database connectivity function
+db();
 
-// listen for requests
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-  });
+// configure app.use() middleware
+app.use(log);
+app.use(bodyParserJSON);
+app.use(bodyParserURLEncoded);
+
+ // Error handling
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,Authorization");
+ next();
+});
+
+// use express router
+app.use('/api',router);
+//call items routing
+itemRoutes(router);
+
+
+app.listen(properties.PORT, (req, res) => {
+    console.log(`Server is running on ${properties.PORT} port.`);
+})

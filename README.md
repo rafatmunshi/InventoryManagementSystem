@@ -23,7 +23,7 @@ Install express and other dependencies
 3.  Body Parser is Node.js body parsing middleware. Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
         npm install body-parser --save
 
-4.  MySQL is open source database use to interacting with database and manipulating the records.
+4.  Mongoose is the Object Document Mapper (ODM) for Node.js and it is written on the top of the Node.js native MongoDB driver.
         npm install mysql --save
 
 5.  Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected. Use -dev flag to save in devDependencies and --save will save the dependencies in package.json file.
