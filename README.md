@@ -196,19 +196,19 @@ Sequence diagram for every use case
 Mockups
 
 MongoDB schema for each Item-
-EquipmentName - 300 characters
-Specifications	- 2000 characters
-Name_of_manufacturer
-Mapping_with_MainInventoryCollectionID
-{BillNumber
-Billdate
-SellerName}
-Conditionwhenreceived	
-isVerifiedbyIC
-{isTransferred? 
-TransferredRecipientName
-InfrastructureMappingID}	
-Remarks
++ EquipmentName - 300 characters
++ Specifications	- 2000 characters
++ Name_of_manufacturer
++ Mapping_with_MainInventoryCollectionID
++ {BillNumber
++ Billdate
++ SellerName}
++ Conditionwhenreceived	
++ isVerifiedbyIC
++ {isTransferred? 
++ TransferredRecipientName
++ InfrastructureMappingID}	
++ Remarks
 
 Action items
 0. Schema validations- UI validations/Controller validations (Check how validations happen in MongoDB)
@@ -218,3 +218,5 @@ Action items
 4. Render data from MongoDB to UI
 5. CRUD APIs
 6. Test APIs from UI
+
+To also see, how to incorporate redis for use in this project.
